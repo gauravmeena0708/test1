@@ -5,15 +5,19 @@ var fs = require('fs')
 var server = http.createServer(function(req, res) {
     res.writeHead(200, { 'Content-type': 'text/html'});
     res.end(fs.readFileSync(__dirname + '/index.html'));
-}).listen(8080, function() {
+});
+server.listen(8080, function() {
     console.log('Listening at: http://localhost:8080');
 });
  
 socketio.listen(server,{ log: false }).on('connection', function (socket) {
     socket.on('message', function (msg) {
-        console.log('Message Received: ', msg);
-	d=new Date();
-        socket.broadcast.emit('message', msg+'-'+d);
-    });
+    socket.emit('message', msg);
+    socket.broadcast.emit('message', msg);
+  });
 });
 
+/*some basic commands
+console.log('Message Received: ', msg);
+d=new Date();
+*/
