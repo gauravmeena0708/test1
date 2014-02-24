@@ -1,4 +1,4 @@
-Webrtc
+Webrtc [![Build Status](https://travis-ci.org/gauravmeena0708/webrtc.png?branch=master)](https://travis-ci.org/gauravmeena0708/webrtc)
 =====
 
 Just a repo to test new technologies like web rtc, web sockets and node.js
