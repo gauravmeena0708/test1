@@ -7,6 +7,6 @@
 		"socket.io": "*"
 	},
 	"scripts": {
-    "test": "ls"
-  },
+    		"test": "ls"
+  	}
 }
